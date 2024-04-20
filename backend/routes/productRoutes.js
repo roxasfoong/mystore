@@ -21,9 +21,13 @@ rounter.get('/:id', asyncHandler(async(req,res) => {
 
         return res.json(product);
 
+    }else{
+
+        res.status(404);
+        throw new Error('Resource not fund');
+
     }
 
-    res.status(404).json({message: 'Proudct Not Found'});
 
 }));
 
